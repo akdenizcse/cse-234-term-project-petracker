@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499328884701",
+    "project_id": "petracker-5ca23",
+    "storage_bucket": "petracker-5ca23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499328884701:android:21bafe6741dc809381e034",
+        "android_client_info": {
+          "package_name": "com.example.petracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNTmso-bb86KaHldac3zVOtMbMlrU60v4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
