@@ -5,7 +5,7 @@ data class Pet(
     val age: Int = 0,
     val hasFood: Boolean = false,
     val hasWater: Boolean = false,
-    val isSick: Boolean = false,
+    val sick: Boolean = false,
     val gotMedicine: Boolean = false,
     val sickDays: Int = 0
 ){

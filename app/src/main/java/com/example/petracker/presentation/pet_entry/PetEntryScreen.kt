@@ -269,7 +269,7 @@ fun PetEntryBody(
                         age = ageInt,
                         hasFood = hasFood,
                         hasWater = hasWater,
-                        isSick = isSick,
+                        sick = isSick,
                         gotMedicine = gotMedicine,
                         sickDays = sickDaysInt
                     )
