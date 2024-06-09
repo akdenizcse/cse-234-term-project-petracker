@@ -126,7 +126,7 @@ fun HomeBody(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "You did not add any pets!\nClick + to add pets!")
+            Text(text = "You did not add any pets!\nClick + to add pets!", style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2)) )
         }
     }
     else{

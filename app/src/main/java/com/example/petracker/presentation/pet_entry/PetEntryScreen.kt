@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -171,8 +172,9 @@ fun PetEntryBody(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start
         ) {
-            Checkbox(checked = hasFood, onCheckedChange = { hasFood = it })
-            Text(text = "Has Food?")
+            Checkbox(checked = hasFood, onCheckedChange = { hasFood = it }, colors = CheckboxDefaults.colors(
+                checkedColor = Color(0xFF7AB2B2)), )
+            Text(text = "Has Food?", style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2)))
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -184,8 +186,9 @@ fun PetEntryBody(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start
         ) {
-            Checkbox(checked = hasWater, onCheckedChange = { hasWater = it })
-            Text(text = "Has Water?")
+            Checkbox(checked = hasWater, onCheckedChange = { hasWater = it },colors = CheckboxDefaults.colors(
+                checkedColor = Color(0xFF7AB2B2)),)
+            Text(text = "Has Water?", style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2)))
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -197,8 +200,9 @@ fun PetEntryBody(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start
         ) {
-            Checkbox(checked = isSick, onCheckedChange = { isSick = it })
-            Text(text = "Is Sick?")
+            Checkbox(checked = isSick, onCheckedChange = { isSick = it }, colors = CheckboxDefaults.colors(
+                checkedColor = Color(0xFF7AB2B2)),)
+            Text(text = "Is Sick?", style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2)))
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -224,7 +228,7 @@ fun PetEntryBody(
                 label = {
                     Text(
                         text = "Sick Days",
-                        style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2))
+                        style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2)),
                     )
                 },
                 modifier = Modifier.fillMaxWidth(),
@@ -239,11 +243,12 @@ fun PetEntryBody(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Start
             ) {
-                Checkbox(checked = gotMedicine, onCheckedChange = {
+                Checkbox(colors = CheckboxDefaults.colors(
+                    checkedColor = Color(0xFF7AB2B2)),checked = gotMedicine, onCheckedChange = {
                     gotMedicine = it
                     medicineGiven = it
                 })
-                Text(text = "Got Medicine?")
+                Text(text = "Got Medicine?", style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2)))
             }
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -253,7 +258,7 @@ fun PetEntryBody(
                 medicineGiven = false
             }
             if (sickDaysInt == 0) {
-                Text(text = "$name is healed.")
+                Text(text = "$name is healed.", style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2)) )
             }
         }
         Button(
