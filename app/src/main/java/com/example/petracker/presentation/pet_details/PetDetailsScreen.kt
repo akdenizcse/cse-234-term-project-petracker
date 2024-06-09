@@ -12,7 +12,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -125,7 +127,15 @@ fun PetDetailsBody(
             value = name,
             onValueChange = { name = it },
             modifier = Modifier.fillMaxWidth(),
-            enabled = false
+            enabled = false,
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedContainerColor = Color(0xFFEEF7FF),
+                unfocusedContainerColor = Color(0xFFEEF7FF),
+                disabledContainerColor = Color(0xFFEEF7FF),
+                disabledBorderColor = Color.Transparent,
+                focusedBorderColor = Color.Transparent,
+                unfocusedBorderColor = Color.Transparent
+            ),
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -136,7 +146,15 @@ fun PetDetailsBody(
                 age = it
                 if (it.isNotEmpty()) ageInt = it.toInt()
             },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedContainerColor = Color(0xFFEEF7FF),
+                unfocusedContainerColor = Color(0xFFEEF7FF),
+                disabledContainerColor = Color(0xFFEEF7FF),
+                disabledBorderColor = Color.Transparent,
+                focusedBorderColor = Color.Transparent,
+                unfocusedBorderColor = Color.Transparent
+            ),
             // Other attributes for OutlinedTextField...
         )
 
@@ -170,7 +188,15 @@ fun PetDetailsBody(
                     sickDays = it
                     if (it.isNotEmpty()) sickDaysInt = it.toInt()
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedContainerColor = Color(0xFFEEF7FF),
+                    unfocusedContainerColor = Color(0xFFEEF7FF),
+                    disabledContainerColor = Color(0xFFEEF7FF),
+                    disabledBorderColor = Color.Transparent,
+                    focusedBorderColor = Color.Transparent,
+                    unfocusedBorderColor = Color.Transparent
+                ),
                 // Other attributes for OutlinedTextField...
             )
             Spacer(modifier = Modifier.height(16.dp))
@@ -179,7 +205,7 @@ fun PetDetailsBody(
                 medicineGiven = true
             }, isEnabled = !medicineGiven)
             Spacer(modifier = Modifier.height(16.dp))
-            if(gotMedicine && sickDaysInt>=1 && !isUpdated){
+            if (gotMedicine && sickDaysInt >= 1 && !isUpdated) {
                 sickDaysInt -= 1
                 sickDays = sickDaysInt.toString()
                 isUpdated = true
@@ -209,8 +235,12 @@ fun PetDetailsBody(
                         // Handle failure, show error message or retry option
                     }
                 )
-            },
-            enabled =  ((pet.age != ageInt) || (pet.sick != isSick) || (pet.hasFood != hasFood) || (pet.hasWater != hasWater) || (pet.gotMedicine != gotMedicine) || (pet.sickDays != sickDaysInt))
+            }, colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFF7AB2B2),
+                contentColor = Color.White,
+            ),
+            shape = RoundedCornerShape(8.dp),
+            enabled = ((pet.age != ageInt) || (pet.sick != isSick) || (pet.hasFood != hasFood) || (pet.hasWater != hasWater) || (pet.gotMedicine != gotMedicine) || (pet.sickDays != sickDaysInt))
         ) {
             Text("Update Pet")
         }
@@ -231,8 +261,10 @@ fun CheckboxWithLabel(
             checked = checked,
             onCheckedChange = onCheckedChange,
             modifier = Modifier.padding(end = 8.dp),
-            enabled = isEnabled
+            enabled = isEnabled, colors = CheckboxDefaults.colors(
+                checkedColor = Color(0xFF7AB2B2)
+            )
         )
-        Text(text)
+        Text(text, style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xA67AB2B2)))
     }
 }
